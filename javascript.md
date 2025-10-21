@@ -94,3 +94,42 @@ document.getElementById("myButton").addEventListener("click", function (event) {
 ```
 
 In this example, clicking the button will not submit a form (if it's inside one) and will not trigger any click event listeners on parent elements.
+
+---
+
+### What is a promise in JavaScript?
+
+A **promise** in JavaScript is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. Promises provide a way to handle asynchronous operations more gracefully than traditional callback functions, allowing for better readability and error handling.
+A promise can be in one of three states:
+
+1. **Pending**: The initial state, neither fulfilled nor rejected.
+2. **Fulfilled**: The operation completed successfully, and the promise has a resulting value.
+3. **Rejected**: The operation failed, and the promise has a reason for the failure.
+   Here's an example of creating and using a promise:
+
+```javascript
+const myPromise = new Promise((resolve, reject) => {
+  const success = true; // Simulate an asynchronous operation
+  setTimeout(() => {
+    if (success) {
+      resolve("Operation completed successfully!");
+    } else {
+      reject("Operation failed.");
+    }
+  }, 1000);
+});
+```
+
+```javascript
+myPromise
+  .then((message) => {
+    console.log(message); // "Operation completed successfully!"
+  })
+  .catch((error) => {
+    console.error(error); // "Operation failed."
+  });
+```
+
+In this example, we create a promise that simulates an asynchronous operation using `setTimeout`. If the operation is successful, we call `resolve`, otherwise we call `reject`. We then handle the fulfilled and rejected states using `.then()` and `.catch()`.
+
+---
