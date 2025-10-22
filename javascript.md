@@ -133,3 +133,12 @@ myPromise
 In this example, we create a promise that simulates an asynchronous operation using `setTimeout`. If the operation is successful, we call `resolve`, otherwise we call `reject`. We then handle the fulfilled and rejected states using `.then()` and `.catch()`.
 
 ---
+
+### Promise methods
+
+- `Promise.all()`
+- `Promise.allSettled`
+- `Promise.any()`
+- `Promise.race()`
+
+```
